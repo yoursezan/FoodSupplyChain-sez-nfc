@@ -35,11 +35,26 @@ header .logo {
   position: absolute;
   top: 20px;
   left: 20px;
-  background: white;
+   
   color: #333;
   padding: 5px 15px;
   font-weight: 600;
   border-radius: 4px;
+}
+
+/* 👇 ADDED: Image logo styling */
+header .logo img {
+  display: block;
+  width: 80px;        /* adjust as needed */
+  height: auto;
+  object-fit: contain;
+  border-radius: 6px;  /* optional rounded corners */
+}
+
+@media (max-width: 600px) {
+  header .logo img {
+    width: 100px;      /* smaller on mobile */
+  }
 }
 
 /* Main grid with 4 columns */

@@ -1,146 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Home</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f7f7f7;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Home</title>
+    <style>
+      .logo {
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
 
-    /* Sidebar */
-    .sidebar {
-      width: 200px;
-      background-color: #014d4d;
-      height: 100vh;
-      position: fixed;
-      left: 0;
-      top: 0;
-      display: flex;
-      flex-direction: column;
-      color: white;
-    }
+      .logo img {
+        width: 100%;
+        max-width: 80px; /* control logo size */
+        height: auto;
+        border-radius: 8px; /* optional, makes it smooth */
+      }
 
-    .logo {
-      padding: 20px;
-      font-size: 22px;
-      font-weight: bold;
-      text-align: center;
-      border-bottom: 1px solid rgba(255,255,255,0.2);
-    }
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+      }
 
-    .menu {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      padding-top: 10px;
-    }
+      /* Sidebar */
+      .sidebar {
+        width: 200px;
+        background-color: #014d4d;
+        height: 100vh;
+        position: fixed;
+        left: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        color: white;
+      }
 
-    .menu a {
-      text-decoration: none;
-      color: white;
-      padding: 12px 20px;
-      display: flex;
-      align-items: center;
-      transition: 0.3s;
-      font-size: 14px;
-    }
+      .logo {
+        padding: 20px;
+        font-size: 22px;
+        font-weight: bold;
+        text-align: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
 
-    .menu a:hover, .menu a.active {
-      background-color: #026868;
-      border-left: 4px solid #fff;
-      padding-left: 16px;
-    }
+      .menu {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding-top: 10px;
+      }
 
-    .logout {
-      margin-top: auto;
-      padding: 15px 20px;
-      background: #013838;
-      text-align: left;
-    }
+      .menu a {
+        text-decoration: none;
+        color: white;
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        transition: 0.3s;
+        font-size: 14px;
+      }
 
-    .logout a {
-      text-decoration: none;
-      color: #fff;
-      font-weight: bold;
-      font-size: 14px;
-    }
+      .menu a:hover,
+      .menu a.active {
+        background-color: #026868;
+        border-left: 4px solid #fff;
+        padding-left: 16px;
+      }
 
-    /* Topbar */
-    .topbar {
-      margin-left: 200px;
-      height: 60px;
-      background-color: white;
-      border-bottom: 1px solid #ddd;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      padding: 0 20px;
-    }
+      .logout {
+        margin-top: auto;
+        padding: 15px 20px;
+        background: #013838;
+        text-align: left;
+      }
 
-    .topbar .profile {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+      .logout a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+        font-size: 14px;
+      }
 
-    .topbar img {
-      width: 35px;
-      height: 35px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
+      /* Topbar */
+      .topbar {
+        margin-left: 200px;
+        height: 60px;
+        background-color: white;
+        border-bottom: 1px solid #ddd;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 0 20px;
+      }
 
-    /* Main content */
-    .content {
-      margin-left: 200px;
-      padding: 40px;
-      text-align: center;
-      background-color: #ecf0f1;
-      height: calc(100vh - 60px);
-    }
+      .topbar .profile {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
 
-    .content h1 {
-      font-size: 28px;
-      color: #222;
-      font-weight: bold;
-    }
-  </style>
-</head>
-<body>
-  <!-- Sidebar -->
-  <div class="sidebar">
-    <div class="logo">Logo</div>
-    <div class="menu">
-      <a href="admin-home.html" class="active">🏠 Home</a>
-      <a href="admin-createAcc.html">📄 Create Acc</a>
-      <a href="#">🏭 Manufacture</a>
-      <a href="#">🚢 Exporter</a>
-      <a href="#">📦 Importer</a>
-      <a href="#">🛒 Retailer</a>
-      <a href="#">📝 Feed Backs</a>
-      <a href="#">⚙️ Settings</a>
+      .topbar img {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      /* Main content */
+      .content {
+        margin-left: 200px;
+        padding: 40px;
+        text-align: center;
+        background-color: #ecf0f1;
+        height: calc(100vh - 60px);
+      }
+
+      .content h1 {
+        font-size: 28px;
+        color: #222;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="logo">
+        <img src="photos/ChainMindsLogo.png" alt="Logo" />
+      </div>
+      <div class="menu">
+        <a href="admin-home.html" class="active">🏠 Home</a>
+        <a href="admin-createAcc.html">📄 Create Acc</a>
+        <a href="#">🏭 Manufacture</a>
+        <a href="#">🚢 Exporter</a>
+        <a href="#">📦 Importer</a>
+        <a href="#">🛒 Retailer</a>
+        <a href="#">📝 Feed Backs</a>
+        <a href="#">⚙️ Settings</a>
+      </div>
+      <div class="logout">
+        <a href="admin-login.html">⬅ Logout</a>
+      </div>
     </div>
-    <div class="logout">
-      <a href="admin-login.html">⬅ Logout</a>
-    </div>
-  </div>
 
-  <!-- Topbar -->
-  <div class="topbar">
-    <div class="profile">
-      <span>🔔</span>
-      <span>Admin_1</span>
-      <img src="photos/puzzle.jpg" alt="Profile">
+    <!-- Topbar -->
+    <div class="topbar">
+      <div class="profile">
+        <span>🔔</span>
+        <span>Admin_1</span>
+        <img src="photos/puzzle.jpg" alt="Profile" />
+      </div>
     </div>
-  </div>
 
-  <!-- Main content -->
-  <div class="content">
-    <h1>Welcome Admin_1 !</h1>
-  </div>
-</body>
+    <!-- Main content -->
+    <div class="content">
+      <h1>Welcome Admin_1 !</h1>
+    </div>
+  </body>
 </html>

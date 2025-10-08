@@ -183,7 +183,7 @@
             </div>
 
             <div class="col-md-6">
-              <h6 class="mb-3">Batch Information</h6>
+              <h6 class="mb-3">Importer Information</h6>
               <form id="infoForm">
                 <div class="mb-2">
                   <label class="form-label">Batch ID</label>
@@ -195,32 +195,47 @@
                   />
                 </div>
                 <div class="mb-2">
-                  <label class="form-label">Farmer / Producer</label>
+                  <label class="form-label">Importer</label>
                   <input
-                    id="farmer"
+                    id="importer"
                     type="text"
                     class="form-control"
-                    placeholder="Name or farm"
+                    placeholder="Name of Importer"
                   />
                 </div>
                 <div class="mb-2">
-                  <label class="form-label">Quantity</label>
+                  <label class="form-label">Location</label>
                   <input
-                    id="qty"
+                    id="importerLocation"
                     type="text"
                     class="form-control"
-                    placeholder="e.g. 20 crates"
+                    placeholder="Exporter's Location"
+                    required
                   />
                 </div>
+
                 <div class="mb-2">
-                  <label class="form-label">Notes</label>
-                  <textarea
-                    id="notes"
-                    rows="2"
+                  <label class="form-label">Product Rcv.</label>
+                  <input
+                    id="arrivalTime"
+                    type="date"
                     class="form-control"
-                    placeholder="Any remarks..."
-                  ></textarea>
+                    placeholder=" Date"
+                    required
+                  />
                 </div>
+
+                <div class="mb-2">
+                  <label class="form-label">Quantity | Weight</label>
+                  <input
+                    id="weightAtImporter"
+                    type="text"
+                    class="form-control"
+                    placeholder="e.g. 20 crates / 2 KG"
+                    required
+                  />
+                </div>
+
                 <div class="d-grid">
                   <button type="submit" class="btn btn-green mt-2">
                     Save Entry

@@ -105,6 +105,9 @@
         font-size: 13px;
         color: var(--muted);
       }
+      .pProduct {
+        color: #1e99a1;
+      }
       .field-value {
         font-weight: 700;
         color: #163c28;
@@ -217,30 +220,98 @@
               </div>
             </div>
 
-            <div class="row g-2">
-              <div class="col-6 col-md-4">
-                <div class="field-title">Product</div>
+            <div class="d-flex justify-content-between align-items-start mb-3">
+              <div>
+                <div class="field-title pProduct">Product</div>
                 <div id="r_product" class="field-value">Apples</div>
               </div>
-              <div class="col-6 col-md-4">
-                <div class="field-title">Manufacturer</div>
-                <div id="r_manf" class="field-value">Green Farms</div>
+            </div>
+
+            <div class="justify-content-between align-items-start mb-3">
+              <div class="row g-2">
+                <div class="col-6 col-md-4">
+                  <div class="field-title pProduct">Manufacturer</div>
+                  <div id="r_manf" class="field-value">Green Farms</div>
+                </div>
+                <div class="col-6 col-md-4">
+                  <div class="field-title">Harvest Date</div>
+                  <div id="r_Hdate" class="field-value">2025-08-01</div>
+                </div>
+                <div class="col-6 col-md-4">
+                  <div class="field-title">Expaire Date</div>
+                  <div id="r_Edate" class="field-value">2026-08-01</div>
+                </div>
+                <div class="col-6 col-md-4">
+                  <div class="field-title">Location</div>
+                  <div id="r_loc" class="field-value">Dhaka, BD</div>
+                </div>
+                <div class="col-6 col-md-4">
+                  <div class="field-title">Quantity</div>
+                  <div id="r_qty" class="field-value">10 crates</div>
+                </div>
               </div>
-              <div class="col-6 col-md-4">
-                <div class="field-title">Harvest Date</div>
-                <div id="r_date" class="field-value">2025-08-01</div>
+            </div>
+
+            <div class="justify-content-between align-items-start mb-3">
+              <div class="row g-2">
+                <div class="col-6 col-md-4">
+                  <div class="field-title pProduct">Exporter</div>
+                  <div id="r_exporter" class="field-value">Green Exporter</div>
+                </div>
+                <div class="col-6 col-md-4">
+                  <div class="field-title">Product Rcv. Date (Exporter)</div>
+                  <div id="r_E-R-date" class="field-value">2025-08-01</div>
+                </div>
+                <div class="col-6 col-md-4">
+                  <div class="field-title">Location (Exporter)</div>
+                  <div id="r_exp-loc" class="field-value">Dhaka, BD</div>
+                </div>
+                <div class="col-6 col-md-4">
+                  <div class="field-title">Quantity</div>
+                  <div id="r_exp-qty" class="field-value">10 crates</div>
+                </div>
               </div>
-              <div class="col-6 col-md-4">
-                <div class="field-title">Location</div>
-                <div id="r_loc" class="field-value">Dhaka, BD</div>
+            </div>
+
+            <div class="justify-content-between align-items-start mb-3">
+              <div class="row g-2">
+                <div class="col-6 col-md-4">
+                  <div class="field-title pProduct">Importer</div>
+                  <div id="r_importer" class="field-value">Red Importer</div>
+                </div>
+                <div class="col-6 col-md-4">
+                  <div class="field-title">Product Rcv. Date (Importer)</div>
+                  <div id="r_I-R-date" class="field-value">2025-08-01</div>
+                </div>
+                <div class="col-6 col-md-4">
+                  <div class="field-title">Location (Importer)</div>
+                  <div id="r_imp-loc" class="field-value">Dhaka, BD</div>
+                </div>
+                <div class="col-6 col-md-4">
+                  <div class="field-title">Quantity</div>
+                  <div id="r_imp-qty" class="field-value">10 crates</div>
+                </div>
               </div>
-              <div class="col-6 col-md-4">
-                <div class="field-title">Quantity</div>
-                <div id="r_qty" class="field-value">10 crates</div>
-              </div>
-              <div class="col-12">
-                <div class="field-title">Notes</div>
-                <div id="r_notes" class="small-muted">No special notes</div>
+            </div>
+
+            <div class="justify-content-between align-items-start mb-3">
+              <div class="row g-2">
+                <div class="col-6 col-md-4">
+                  <div class="field-title pProduct">Retailer</div>
+                  <div id="r_retailer" class="field-value">Green Retailer</div>
+                </div>
+                <div class="col-6 col-md-4">
+                  <div class="field-title">Product Rcv. Date (Retailer)</div>
+                  <div id="r_R-R-date" class="field-value">2025-08-01</div>
+                </div>
+                <div class="col-6 col-md-4">
+                  <div class="field-title">Location (Retailer)</div>
+                  <div id="r_rtl-loc" class="field-value">Dhaka, BD</div>
+                </div>
+                <div class="col-6 col-md-4">
+                  <div class="field-title">Quantity</div>
+                  <div id="r_exp-qty" class="field-value">10 crates</div>
+                </div>
               </div>
             </div>
 
@@ -273,9 +344,10 @@
           product: "Red Apples",
           manufacturer: "Green Orchards Ltd",
           harvestDate: "2025-08-01",
+          expaireDate: "2039-03-28",
           location: "Gazipur, Bangladesh",
           qty: "12 crates",
-          notes: "Organic produce, cold-stored",
+
           status: "Genuine",
         },
         "BATCH-2002": {
@@ -283,9 +355,10 @@
           product: "Golden Mango",
           manufacturer: "Sunrise Farms",
           harvestDate: "2025-07-20",
+          expaireDate: "2025-10-24",
           location: "Rajshahi, Bangladesh",
           qty: "5 pallets",
-          notes: "Ripe, shipped via refrigerated truck",
+
           status: "Genuine",
         },
         "BATCH-DEMO-001": {
@@ -293,9 +366,10 @@
           product: "Demo Beans",
           manufacturer: "Demo Farm Co",
           harvestDate: "2025-01-01",
+          expaireDate: "2029-03-04",
           location: "Demo City",
           qty: "1 crate",
-          notes: "Demo product",
+
           status: "Genuine",
         },
       };
@@ -315,10 +389,11 @@
       const r_batch = document.getElementById("r_batch");
       const r_product = document.getElementById("r_product");
       const r_manf = document.getElementById("r_manf");
-      const r_date = document.getElementById("r_date");
+      const r_Hdate = document.getElementById("r_Hdate");
+      const r_Edate = document.getElementById("r_Edate");
       const r_loc = document.getElementById("r_loc");
       const r_qty = document.getElementById("r_qty");
-      const r_notes = document.getElementById("r_notes");
+
       const r_status = document.getElementById("r_status");
 
       // Web NFC reader reference
@@ -449,10 +524,11 @@
           r_batch.textContent = data.batchId;
           r_product.textContent = data.product;
           r_manf.textContent = data.manufacturer;
-          r_date.textContent = data.harvestDate;
+          r_Hdate.textContent = data.harvestDate;
+          r_Edate.textContent = data.expaireDate;
           r_loc.textContent = data.location;
           r_qty.textContent = data.qty;
-          r_notes.textContent = data.notes;
+
           r_status.textContent = data.status;
           resultCard.classList.remove("d-none");
           quickMsg.textContent = "✅ Batch found";

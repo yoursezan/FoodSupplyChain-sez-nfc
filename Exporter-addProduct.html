@@ -183,7 +183,7 @@
             </div>
 
             <div class="col-md-6">
-              <h6 class="mb-3">Batch Information</h6>
+              <h6 class="mb-3">Exporter Information</h6>
               <form id="infoForm">
                 <div class="mb-2">
                   <label class="form-label">Batch ID</label>
@@ -192,35 +192,53 @@
                     type="text"
                     class="form-control"
                     placeholder="e.g. BATCH-001"
+                    required
                   />
                 </div>
                 <div class="mb-2">
-                  <label class="form-label">Farmer / Producer</label>
+                  <label class="form-label">Exporter</label>
                   <input
-                    id="farmer"
+                    id="exporter"
                     type="text"
                     class="form-control"
-                    placeholder="Name or farm"
+                    placeholder="Name of Exporter"
+                    required
                   />
                 </div>
+
                 <div class="mb-2">
-                  <label class="form-label">Quantity</label>
+                  <label class="form-label">Location</label>
                   <input
-                    id="qty"
+                    id="exporterLocation"
                     type="text"
                     class="form-control"
-                    placeholder="e.g. 20 crates"
+                    placeholder="Exporter's Location"
+                    required
                   />
                 </div>
+
                 <div class="mb-2">
-                  <label class="form-label">Notes</label>
-                  <textarea
-                    id="notes"
-                    rows="2"
+                  <label class="form-label">Product Rcv.</label>
+                  <input
+                    id="arrivalTime"
+                    type="date"
                     class="form-control"
-                    placeholder="Any remarks..."
-                  ></textarea>
+                    placeholder=" Date"
+                    required
+                  />
                 </div>
+
+                <div class="mb-2">
+                  <label class="form-label">Quantity | Weight</label>
+                  <input
+                    id="weightAtExporter"
+                    type="text"
+                    class="form-control"
+                    placeholder="e.g. 20 crates / 2 KG"
+                    required
+                  />
+                </div>
+
                 <div class="d-grid">
                   <button type="submit" class="btn btn-green mt-2">
                     Save Entry
@@ -268,7 +286,8 @@
       const demoBtn = document.getElementById("demoBtn");
       const noSupport = document.getElementById("noSupport");
       const batchInput = document.getElementById("batchId");
-      const farmerInput = document.getElementById("farmer");
+      const exporterInput = document.getElementById("exporter");
+      const exporterLocationInput = document.getElementById("exporterLocation");
       const qtyInput = document.getElementById("qty");
       const notesInput = document.getElementById("notes");
       const form = document.getElementById("infoForm");
@@ -303,7 +322,7 @@
         <div class='border rounded p-2 mb-2'>
           <div><strong>${h.batchId}</strong></div>
           <div class='text-muted'>${fmt(h.timestamp)}</div>
-          <div>${h.farmer || ""} ${h.qty ? "• " + h.qty : ""}</div>
+          <div>${h.exporter || ""} ${h.qty ? "• " + h.qty : ""}</div>
           ${
             h.notes
               ? `<div class='text-muted fst-italic small'>${h.notes}</div>`
@@ -371,7 +390,7 @@
         history.unshift({
           timestamp: time,
           batchId,
-          farmer: "",
+          exporter: "",
           qty: "",
           notes: "",
         });
@@ -384,7 +403,7 @@
         const data = {
           timestamp: Date.now(),
           batchId: batchInput.value,
-          farmer: farmerInput.value,
+          exporter: exporterInput.value,
           qty: qtyInput.value,
           notes: notesInput.value,
         };
@@ -401,11 +420,11 @@
 
       exportBtn.onclick = () => {
         if (history.length === 0) return alert("No data to export");
-        const headers = ["Timestamp", "Batch ID", "Farmer", "Qty", "Notes"];
+        const headers = ["Timestamp", "Batch ID", "Exporter", "Qty", "Notes"];
         const rows = history.map((h) => [
           fmt(h.timestamp),
           h.batchId,
-          h.farmer,
+          h.exporter,
           h.qty,
           h.notes,
         ]);
